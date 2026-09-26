@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">🚆</div>
+    <div>
+        <h1>Railway Reservation</h1>
+        <p>RDBMS Mini Project</p>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Book Your Railway Journey</h2>
+        <p>Enter passenger details. The form data will be saved in the MySQL RDBMS.</p>
+    </section>
+
+    <form action="book" method="post" onsubmit="return validateForm()" class="card">
+        <h2>Passenger Details</h2>
+
+        <div class="grid">
+            <label>Passenger ID
+                <input type="number" name="passengerId" id="passengerId" min="1" required>
+            </label>
+
+            <label>Full Name
+                <input type="text" name="name" id="name" maxlength="30" required>
+            </label>
+
+            <label>Age
+                <input type="number" name="age" id="age" min="1" max="120" required>
+            </label>
+
+            <label>Gender
+                <select name="gender" id="gender" required>
+                    <option value="">Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>Phone Number
+                <input type="tel" name="phone" id="phone" maxlength="10" pattern="[0-9]{10}" required>
+            </label>
+        </div>
+
+        <button type="submit">Save Passenger</button>
+    </form>
+
+    <section class="card info">
+        <h2>Database Flow</h2>
+        <div class="flow">
+            <span>Web Form</span><b>→</b><span>Java Servlet</span><b>→</b><span>JDBC</span><b>→</b><span>MySQL RDBMS</span>
+        </div>
+    </section>
+</main>
+
+<footer>Railway Reservation Management System | RDBMS Project</footer>
+<script src="script.js"></script>
+</body>
+</html>
